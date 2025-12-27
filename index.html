@@ -2,96 +2,51 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CLD-PC.TECH | Individuelle PC-Assemblierung</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>CLD-PC.TECH | Professional PC Design</title>
+    <link rel="stylesheet" href="style.css">
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <style>
-        .hero-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
-        .card-hover:hover { transform: translateY(-10px); transition: all 0.3s ease; }
+        :root { --neon: #00f2ff; --bg: #050505; }
+        body { margin: 0; font-family: 'Orbitron', sans-serif; background: var(--bg); color: white; }
+        nav { padding: 20px 5%; display: flex; justify-content: space-between; border-bottom: 1px solid var(--neon); position: sticky; top: 0; background: rgba(0,0,0,0.8); z-index: 100; }
+        .hero { height: 80vh; background: linear-gradient(rgba(0,0,0,0.6), var(--bg)), url('hero.jpg') center/cover; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 50px 5%; }
+        .card { border: 1px solid #222; padding: 20px; border-radius: 10px; background: #0a0a0a; transition: 0.3s; }
+        .card:hover { border-color: var(--neon); box-shadow: 0 0 20px var(--neon); }
+        .card img { width: 100%; border-radius: 5px; }
+        .btn { background: var(--neon); color: black; padding: 10px 20px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block; margin-top: 10px; }
+        footer { padding: 50px; text-align: center; border-top: 1px solid #222; }
     </style>
 </head>
-<body class="bg-slate-50 font-sans">
-
-    <nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 items-center">
-                <div class="flex-shrink-0 flex items-center">
-                    <span class="text-2xl font-bold text-blue-600">CLD-PC.TECH</span>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="#home" class="text-gray-700 hover:text-blue-600 px-3 py-2 font-medium">Home</a>
-                        <a href="#services" class="text-gray-700 hover:text-blue-600 px-3 py-2 font-medium">Leistungen</a>
-                        <a href="#contact" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Kontakt</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+<body>
+    <nav>
+        <div style="font-size: 24px; color: var(--neon); font-weight: bold;">CLD-PC.TECH</div>
+        <div><a href="#kontakt" style="color: white; text-decoration: none;">KONTAKT</a></div>
     </nav>
 
-    <header id="home" class="hero-gradient text-white py-20">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-6">Individuelle PC-Assemblierung & IT-Wartung</h1>
-            <p class="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
-                Professionelle PC-Montage, Reinigung und IT-Services in Viernheim und Umgebung. Wir bauen Ihren Traum-PC!
-            </p>
-            <div class="flex justify-center gap-4">
-                <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold text-lg">Projekt starten</a>
-                <a href="#services" class="border border-slate-400 hover:bg-slate-800 text-white px-8 py-3 rounded-lg font-semibold text-lg">Mehr erfahren</a>
-            </div>
-        </div>
+    <header class="hero">
+        <h1 style="font-size: 4rem; margin: 0;">CLD-PC.TECH</h1>
+        <p style="color: var(--neon);">High-End Custom PC Designs & Professional Assembling</p>
     </header>
 
-    <section id="services" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-slate-900">Unsere Leistungen</h2>
-                <p class="text-gray-600 mt-4">Qualität und Präzision für Ihr System</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-slate-50 p-8 rounded-xl card-hover border border-slate-100 shadow-sm">
-                    <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-gamepad"></i></div>
-                    <h3 class="text-xl font-bold mb-3">Gaming-Setups</h3>
-                    <p class="text-gray-600">Individuelle High-End-PCs, optimiert für maximale Leistung und perfekte Ästhetik.</p>
-                </div>
-
-                <div class="bg-slate-50 p-8 rounded-xl card-hover border border-slate-100 shadow-sm">
-                    <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-tools"></i></div>
-                    <h3 class="text-xl font-bold mb-3">Wartung & Reinigung</h3>
-                    <p class="text-gray-600">Professionelle Reinigung, Austausch der Wärmeleitpaste und Systemoptimierung.</p>
-                </div>
-
-                <div class="bg-slate-50 p-8 rounded-xl card-hover border border-slate-100 shadow-sm">
-                    <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-briefcase"></i></div>
-                    <h3 class="text-xl font-bold mb-3">Office-Lösungen</h3>
-                    <p class="text-gray-600">Zuverlässige Arbeitsrechner für Home-Office und Unternehmen, leise und effizient.</p>
-                </div>
-            </div>
+    <div class="grid">
+        <div class="card">
+            <img src="gaming.jpg" alt="Gaming">
+            <h3>GAMING SYSTEMS</h3>
+            <p>Maximale Performance für Gamer. Individuell gebaut in Viernheim.</p>
         </div>
-    </section>
-
-    <section id="contact" class="py-20 bg-slate-900 text-white">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-8">Bereit für Ihren neuen PC?</h2>
-            <p class="text-slate-400 mb-10 text-lg">Kontaktieren Sie uns für ein unverbindliches Angebot oder eine Beratung.</p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left max-w-2xl mx-auto">
-                <div class="flex items-center space-x-4">
-                    <div class="bg-blue-600 p-3 rounded-full"><i class="fas fa-envelope"></i></div>
-                    <span>cld-pctech@web.de</span>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <div class="bg-blue-600 p-3 rounded-full"><i class="fas fa-map-marker-alt"></i></div>
-                    <span>Viernheim, Deutschland</span>
-                </div>
-            </div>
+        <div class="card">
+            <img opacity="0.5" src="office.jpg" alt="Office">
+            <h3>OFFICE & WORKSTATION</h3>
+            <p>Zuverlässige Hardware-Lösungen für Ihr Business.</p>
         </div>
-    </section>
+    </div>
 
-    <footer class="bg-slate-950 text-slate-500 py-8 border-t border-slate-800 text-center">
-        <p>&copy; 2024 CLD-PC.TECH. Alle Rechte vorbehalten.</p>
+    <footer id="kontakt">
+        <h2>KONTAKT</h2>
+        <p>E-Mail: cld-pctech@web.de</p>
+        <p>Standort: Viernheim, Deutschland</p>
+        <p style="font-size: 0.8rem; color: #444;">&copy; 2024 CLD-PC.TECH - Modifică ce vrei din Panoul de Control</p>
     </footer>
 
     <script>
