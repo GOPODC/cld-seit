@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -7,13 +8,13 @@
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <style>
         :root { --neon: #00f2ff; --bg: #050505; }
-        body { margin: 0; font-family: 'Orbitron', sans-serif; background: var(--bg); color: white; }
+        body { margin: 0; font-family: 'Segoe UI', sans-serif; background: var(--bg); color: white; }
         nav { padding: 20px 5%; display: flex; justify-content: space-between; border-bottom: 1px solid var(--neon); position: sticky; top: 0; background: rgba(0,0,0,0.8); z-index: 100; }
         .hero { height: 80vh; background: linear-gradient(rgba(0,0,0,0.6), var(--bg)), url('hero.jpg') center/cover; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 50px 5%; }
         .card { border: 1px solid #222; padding: 20px; border-radius: 10px; background: #0a0a0a; transition: 0.3s; }
         .card:hover { border-color: var(--neon); box-shadow: 0 0 20px var(--neon); }
-        .card img { width: 100%; border-radius: 5px; }
+        .card img { width: 100%; border-radius: 5px; height: 200px; object-fit: cover; }
         .btn { background: var(--neon); color: black; padding: 10px 20px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block; margin-top: 10px; }
         footer { padding: 50px; text-align: center; border-top: 1px solid #222; }
     </style>
@@ -21,32 +22,37 @@
 <body>
     <nav>
         <div style="font-size: 24px; color: var(--neon); font-weight: bold;">CLD-PC.TECH</div>
-        <div><a href="#kontakt" style="color: white; text-decoration: none;">KONTAKT</a></div>
+        <div><a href="#kontakt" style="color: white; text-decoration: none; font-weight: bold;">KONTAKT</a></div>
     </nav>
 
     <header class="hero">
-        <h1 style="font-size: 4rem; margin: 0;">CLD-PC.TECH</h1>
-        <p style="color: var(--neon);">High-End Custom PC Designs & Professional Assembling</p>
+        <h1 style="font-size: 4rem; margin: 0; letter-spacing: 5px;">CLD-PC.TECH</h1>
+        <p style="color: var(--neon); font-size: 1.5rem; margin-top: 10px;">High-End Custom PC Designs & Professional Assembling</p>
     </header>
 
     <div class="grid">
         <div class="card">
-            <img src="gaming.jpg" alt="Gaming">
-            <h3>GAMING SYSTEMS</h3>
-            <p>Maximale Performance für Gamer. Individuell gebaut in Viernheim.</p>
+            <img src="gaming.jpg" alt="Gaming PC">
+            <h3 style="color: var(--neon);">GAMING SYSTEMS</h3>
+            <p>Maximale Performance für Gamer. Jedes System wird individuell nach Ihren Wünschen in Viernheim gebaut.</p>
+            <a href="mailto:cld-pctech@web.de" class="btn">JETZT ANFRAGEN</a>
         </div>
+
         <div class="card">
-            <img opacity="0.5" src="office.jpg" alt="Office">
-            <h3>OFFICE & WORKSTATION</h3>
-            <p>Zuverlässige Hardware-Lösungen für Ihr Business.</p>
+            <img src="office.jpg" alt="Office PC">
+            <h3 style="color: var(--neon);">OFFICE & WORKSTATION</h3>
+            <p>Zuverlässige Hardware-Lösungen für Ihr Business oder Home-Office. Leise, schnell und effizient.</p>
+            <a href="mailto:cld-pctech@web.de" class="btn">MEHR ERFAHREN</a>
         </div>
     </div>
 
     <footer id="kontakt">
-        <h2>KONTAKT</h2>
-        <p>E-Mail: cld-pctech@web.de</p>
+        <h2 style="color: var(--neon);">KONTAKT</h2>
+        <p style="font-size: 1.2rem;">E-Mail: <strong>cld-pctech@web.de</strong></p>
         <p>Standort: Viernheim, Deutschland</p>
-        <p style="font-size: 0.8rem; color: #444;">&copy; 2024 CLD-PC.TECH - Modifică ce vrei din Panoul de Control</p>
+        <div style="margin-top: 30px; border-top: 1px solid #222; padding-top: 20px;">
+             <p style="font-size: 0.8rem; color: #555;">&copy; 2024 CLD-PC.TECH | Professionelle PC-Assemblierung</p>
+        </div>
     </footer>
 
     <script>
