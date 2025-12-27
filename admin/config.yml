@@ -2,17 +2,20 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "images"
-public_folder: "images"
+media_folder: "img"
+public_folder: "img"
 
 collections:
-  - name: "content"
-    label: "Site Content"
+  - name: "setari"
+    label: "Setări Site"
+    delete: false
+    editor:
+      preview: false
     files:
-      - file: "index.html"
-        label: "Home Page"
-        name: "home"
+      - name: "general"
+        label: "Informații Contact"
+        file: "index.html"
         fields:
-          - {label: "Site Title", name: "title", widget: "string"}
-          - {label: "Contact Email", name: "email", widget: "string"}
-          - {label: "Location", name: "location", widget: "string"}
+          - {label: "Titlu Site", name: "titlu", widget: "string"}
+          - {label: "Email Contact", name: "email", widget: "string"}
+          - {label: "Locație", name: "locatie", widget: "string"}
