@@ -1,57 +1,66 @@
-
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CLD-PC.TECH | Professional PC Design</title>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <style>
         :root { --neon: #00f2ff; --bg: #050505; }
-        body { margin: 0; font-family: 'Segoe UI', sans-serif; background: var(--bg); color: white; }
-        nav { padding: 20px 5%; display: flex; justify-content: space-between; border-bottom: 1px solid var(--neon); position: sticky; top: 0; background: rgba(0,0,0,0.8); z-index: 100; }
-        .hero { height: 80vh; background: linear-gradient(rgba(0,0,0,0.6), var(--bg)), url('hero.jpg') center/cover; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 50px 5%; }
-        .card { border: 1px solid #222; padding: 20px; border-radius: 10px; background: #0a0a0a; transition: 0.3s; }
-        .card:hover { border-color: var(--neon); box-shadow: 0 0 20px var(--neon); }
-        .card img { width: 100%; border-radius: 5px; height: 200px; object-fit: cover; }
-        .btn { background: var(--neon); color: black; padding: 10px 20px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block; margin-top: 10px; }
-        footer { padding: 50px; text-align: center; border-top: 1px solid #222; }
+        body { margin: 0; font-family: 'Segoe UI', sans-serif; background: var(--bg); color: white; scroll-behavior: smooth; }
+        nav { padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--neon); position: sticky; top: 0; background: rgba(0,0,0,0.9); z-index: 100; }
+        .hero { height: 60vh; background: linear-gradient(rgba(0,0,0,0.7), var(--bg)), url('https://images.unsplash.com/photo-1587202377425-876ae33ca702?q=80&w=2070') center/cover; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .section-title { text-align: center; color: var(--neon); margin: 40px 0; letter-spacing: 3px; }
+        .grid-main { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 20px 5%; }
+        .category-card { border: 2px solid #222; border-radius: 15px; overflow: hidden; background: #0a0a0a; transition: 0.4s; text-align: center; text-decoration: none; color: white; }
+        .category-card:hover { border-color: var(--neon); transform: translateY(-5px); box-shadow: 0 0 20px var(--neon); }
+        .category-card img { width: 100%; height: 250px; object-fit: cover; }
+        .btn { background: var(--neon); color: black; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block; margin: 15px 0; transition: 0.3s; }
+        .btn:hover { background: white; box-shadow: 0 0 15px white; }
+        footer { padding: 40px; text-align: center; border-top: 1px solid #222; margin-top: 50px; font-size: 0.9rem; }
+        .admin-link { color: #333; text-decoration: none; font-size: 0.7rem; margin-top: 20px; display: block; }
     </style>
 </head>
 <body>
     <nav>
-        <div style="font-size: 24px; color: var(--neon); font-weight: bold;">CLD-PC.TECH</div>
-        <div><a href="#kontakt" style="color: white; text-decoration: none; font-weight: bold;">KONTAKT</a></div>
+        <div style="font-size: 22px; color: var(--neon); font-weight: bold;">CLD-PC.TECH</div>
+        <a href="#kontakt" style="color: white; text-decoration: none; border: 1px solid var(--neon); padding: 5px 15px; border-radius: 20px;">Kontakt</a>
     </nav>
 
     <header class="hero">
-        <h1 style="font-size: 4rem; margin: 0; letter-spacing: 5px;">CLD-PC.TECH</h1>
-        <p style="color: var(--neon); font-size: 1.5rem; margin-top: 10px;">High-End Custom PC Designs & Professional Assembling</p>
+        <h1 style="font-size: 3rem; margin: 0;">CLD-PC.TECH</h1>
+        <p style="color: var(--neon); font-size: 1.2rem;">High-End Custom PC Designs</p>
     </header>
 
-    <div class="grid">
-        <div class="card">
+    <h2 class="section-title">UNSERE SERVICES</h2>
+    <div class="grid-main">
+        <div class="category-card">
             <img src="gaming.jpg" alt="Gaming PC">
-            <h3 style="color: var(--neon);">GAMING SYSTEMS</h3>
-            <p>Maximale Performance für Gamer. Jedes System wird individuell după dorința dumneavoastră built în Viernheim.</p>
-            <a href="mailto:cld-pctech@web.de" class="btn">JETZT ANFRAGEN</a>
+            <h3>GAMING SYSTEMS</h3>
+            <p>High-Performance Build</p>
+            <a href="#gaming-list" class="btn">PRODUKTE SEHEN</a>
         </div>
-        <div class="card">
+        <div class="category-card">
             <img src="office.jpg" alt="Office PC">
-            <h3 style="color: var(--neon);">OFFICE & WORKSTATION</h3>
-            <p>Zuverlässige Hardware-Lösungen für Ihr Business oder Home-Office. Leise, schnell und effizient.</p>
-            <a href="mailto:cld-pctech@web.de" class="btn">MEHR ERFAHREN</a>
+            <h3>OFFICE & WORK</h3>
+            <p>Leise & Effizient</p>
+            <a href="#office-list" class="btn">DETAILS</a>
+        </div>
+    </div>
+
+    <div id="gaming-list" style="padding: 50px 5%;">
+        <h2 class="section-title">VERFÜGBARE SYSTEME</h2>
+        <div style="text-align: center; color: #555;">
+            <p>Momentan werden neue Systeme konfiguriert...</p>
         </div>
     </div>
 
     <footer id="kontakt">
         <h2 style="color: var(--neon);">KONTAKT</h2>
-        <p>E-Mail: <strong id="email-afisat">cld-pctech@web.de</strong></p>
-        <p>Standort: <span id="locatie-afisata">Viernheim, Deutschland</span></p>
-        <div style="margin-top: 30px; border-top: 1px solid #222; padding-top: 20px;">
-             <p style="font-size: 0.8rem; color: #555;">&copy; 2024 CLD-PC.TECH</p>
-        </div>
+        <p>E-Mail: <strong>cld-pctech@web.de</strong></p>
+        <p>Standort: <strong>Viernheim, Deutschland</strong></p>
+        <p>&copy; 2024 CLD-PC.TECH</p>
+        <a href="/admin/" class="admin-link">🔒 Admin Login</a>
     </footer>
 
     <script>
