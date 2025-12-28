@@ -1,168 +1,121 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CLD-PC.TECH | Custom Designs</title>
+    <title>CLD-PC.TECH</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: #0a1118;
-            color: white;
+        body { 
+            font-family: 'Segoe UI', sans-serif; 
+            background: #0a1118; 
+            color: white; 
             scroll-behavior: smooth;
         }
 
-        /* FUNDALUL TAU ORIGINAL */
+        /* SECTIUNEA PRINCIPALA */
         .hero {
             height: 100vh;
             background: url('hero.jpg') no-repeat center center fixed;
             background-size: cover;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between; /* Impinge butoanele la margini */
+            padding: 0 10%;
             position: relative;
         }
 
-        /* CONTAINERUL CENTRAL - LOGO PE MIJLOC, BUTOANE LATERAL */
-        .main-nav-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 40px;
-            width: 100%;
-            max-width: 1200px;
-            padding: 20px;
+        /* LOGO-UL DIN IMAGINEA DE FUNDAL RAMANE LIBER PE MIJLOC */
+        .spacer-center {
+            width: 350px; /* Spatiu gol pe mijloc sa se vada logo-ul tau original */
         }
 
-        /* LOGO-UL ALB ROTUND DIN FOTO */
-        .logo-central {
-            background: white;
-            color: #1a1a1a;
-            width: 300px;
-            height: 180px;
-            border-radius: 90px; /* Forma rotunjita din poza ta */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-            z-index: 2;
-            text-align: center;
-        }
-
-        .logo-central h1 { font-size: 4rem; font-weight: 800; line-height: 1; }
-        .logo-central p { font-size: 0.9rem; font-weight: bold; color: #333; }
-
-        /* BUTOANELE STÂNGA / DREAPTA */
         .category-card {
             background: rgba(0, 0, 0, 0.7);
             border: 2px solid #00bfff;
             border-radius: 15px;
-            width: 250px;
-            padding: 15px;
+            width: 260px;
+            padding: 20px;
             text-align: center;
             backdrop-filter: blur(10px);
             transition: 0.4s;
+            z-index: 10;
         }
 
         .category-card:hover {
             transform: scale(1.1);
-            box-shadow: 0 0 20px #00bfff;
+            box-shadow: 0 0 25px #00bfff;
         }
 
-        .category-card img { width: 100%; height: 140px; object-fit: contain; margin-bottom: 10px; }
-        .category-card h2 { font-size: 1rem; color: #00bfff; margin-bottom: 10px; }
+        .category-card img { width: 100%; height: 150px; object-fit: contain; margin-bottom: 15px; }
+        .category-card h2 { font-size: 1.1rem; color: #00bfff; margin-bottom: 15px; }
 
-        .btn-small {
+        .btn {
             display: inline-block;
-            padding: 8px 15px;
+            padding: 8px 20px;
             border: 1px solid #00bfff;
             color: white;
             text-decoration: none;
+            font-weight: bold;
             font-size: 0.8rem;
-            font-weight: bold;
         }
 
-        /* INDICATOR SCROLL */
-        .scroll-hint {
-            position: absolute;
-            bottom: 30px;
-            color: #00bfff;
-            font-weight: bold;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-
-        /* SECTIUNILE DE JOS (SCROLL) */
-        .info-page {
+        /* SCROLL INFO */
+        .info-section {
             background: #0d161f;
             padding: 80px 10%;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 40px;
-        }
-
-        .info-box h3 { color: #00bfff; margin-bottom: 15px; }
-        
-        footer {
-            background: #050a0f;
-            padding: 40px 10%;
-            border-top: 1px solid #00bfff;
             text-align: center;
         }
 
-        .admin-link { color: #222; text-decoration: none; font-size: 0.8rem; margin-top: 20px; display: block; }
+        footer {
+            background: #050a0f;
+            padding: 40px;
+            text-align: center;
+            border-top: 1px solid #00bfff;
+        }
+
+        .admin-link { color: #222; text-decoration: none; font-size: 0.8rem; display: block; margin-top: 20px; }
     </style>
 </head>
 <body>
 
     <section class="hero">
-        <div class="main-nav-container">
-            
-            <div class="category-card">
-                <img src="gaming.jpg" alt="Gaming">
-                <h2>GAMING BUILDS</h2>
-                <a href="/gaming" class="btn-small">ÖFFNEN</a>
-            </div>
-
-            <div class="logo-central">
-                <h1>CLD</h1>
-                <p>Custom-Led Designs PC's</p>
-            </div>
-
-            <div class="category-card">
-                <img src="office.jpg" alt="Office">
-                <h2>OFFICE & WORK</h2>
-                <a href="/office" class="btn-small">ÖFFNEN</a>
-            </div>
-
+        <div class="category-card">
+            <img src="gaming.jpg" alt="Gaming">
+            <h2>GAMING BUILDS</h2>
+            <a href="gaming.html" class="btn">ÖFFNEN</a>
         </div>
-        <div class="scroll-hint">DETAILS ANZEIGEN ↓</div>
+
+        <div class="spacer-center"></div>
+
+        <div class="category-card">
+            <img src="office.jpg" alt="Office">
+            <h2>OFFICE & WORK</h2>
+            <a href="office.html" class="btn">ÖFFNEN</a>
+        </div>
     </section>
 
-    <section class="info-page">
-        <div class="info-box">
-            <h3>Zahlungsarten</h3>
-            <p>Überweisung, Revolut oder Barzahlung. Alle Preise inkl. Rechnung.</p>
+    <section class="info-section">
+        <div>
+            <h3 style="color:#00bfff">Zahlung</h3>
+            <p>Banküberweisung & Revolut</p>
         </div>
-        <div class="info-box">
-            <h3>Support & Garantie</h3>
-            <p>24 Monate Garantie auf alle Systeme. Support aus Deutschland.</p>
+        <div>
+            <h3 style="color:#00bfff">Garantie</h3>
+            <p>24 Monate Premium Support</p>
         </div>
-        <div class="info-box">
-            <h3>Standort</h3>
-            <p>Professionelle PC-Systeme direkt aus Deutschland.</p>
+        <div>
+            <h3 style="color:#00bfff">Standort</h3>
+            <p>Deutschland</p>
         </div>
     </section>
 
     <footer>
         <p>&copy; 2025 CLD-PC.TECH | Deutschland</p>
-        <p>Email: contact@cld-pc.tech</p>
-        <a href="/admin/index.html" class="admin-link">🔒 Adminbereich</a>
+        <a href="admin.html" class="admin-link">🔒 Adminbereich</a>
     </footer>
 
 </body>
