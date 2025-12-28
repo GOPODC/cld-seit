@@ -3,119 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CLD-PC.TECH</title>
+    <title>CLD-PC.TECH | High-End Custom PC</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Segoe UI', sans-serif; 
-            background: #0a1118; 
-            color: white; 
-            scroll-behavior: smooth;
+        :root { --neon: #00f2ff; --dark-blue: #00151a; --bg: #020202; }
+        body { margin: 0; font-family: 'Segoe UI', sans-serif; background: var(--bg); color: white; scroll-behavior: smooth; }
+        
+        /* Hero Section */
+        .hero { 
+            height: 65vh; 
+            background: linear-gradient(rgba(0, 21, 26, 0.6), var(--bg)), url('hero.jpg') center/cover no-repeat; 
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+            border-bottom: 1px solid var(--neon);
         }
 
-        /* SECTIUNEA PRINCIPALA */
-        .hero {
-            height: 100vh;
-            background: url('hero.jpg') no-repeat center center fixed;
-            background-size: cover;
-            display: flex;
-            align-items: center;
-            justify-content: space-between; /* Impinge butoanele la margini */
-            padding: 0 10%;
-            position: relative;
+        nav { padding: 15px 5%; display: flex; justify-content: center; background: rgba(0,0,0,0.9); border-bottom: 1px solid rgba(0,242,255,0.2); position: sticky; top: 0; z-index: 1000; }
+        .logo-text { font-size: 1.5rem; color: var(--neon); font-weight: bold; letter-spacing: 2px; text-transform: uppercase; }
+
+        .section-title { text-align: center; color: var(--neon); margin: 50px 0 30px; font-size: 1.4rem; letter-spacing: 2px; text-transform: uppercase; }
+        
+        /* Grid Categorii */
+        .grid-main { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 0 10%; margin-bottom: 60px; }
+        .category-card { 
+            border: 1px solid rgba(0,242,255,0.2); border-radius: 12px; overflow: hidden; 
+            background: var(--dark-blue); transition: 0.4s; text-align: center; text-decoration: none; color: white;
         }
-
-        /* LOGO-UL DIN IMAGINEA DE FUNDAL RAMANE LIBER PE MIJLOC */
-        .spacer-center {
-            width: 350px; /* Spatiu gol pe mijloc sa se vada logo-ul tau original */
+        .category-card:hover { border-color: var(--neon); transform: translateY(-5px); box-shadow: 0 0 20px rgba(0,242,255,0.3); }
+        .category-card img { width: 100%; height: 200px; object-fit: cover; opacity: 0.9; }
+        .category-card h3 { font-size: 1.2rem; margin: 20px 0; }
+        
+        /* Formular de Contact (Email) */
+        .contact-section { background: #050505; padding: 60px 10%; border-top: 1px solid #111; }
+        .contact-container { max-width: 600px; margin: 0 auto; }
+        .contact-form { display: flex; flex-direction: column; gap: 15px; }
+        .contact-form input, .contact-form textarea {
+            background: #111; border: 1px solid #333; color: white; padding: 12px; border-radius: 5px; font-family: inherit;
         }
+        .contact-form input:focus, .contact-form textarea:focus { border-color: var(--neon); outline: none; }
+        .btn-send { background: var(--neon); color: black; border: none; padding: 15px; font-weight: bold; cursor: pointer; border-radius: 5px; transition: 0.3s; }
+        .btn-send:hover { background: white; }
 
-        .category-card {
-            background: rgba(0, 0, 0, 0.7);
-            border: 2px solid #00bfff;
-            border-radius: 15px;
-            width: 260px;
-            padding: 20px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            transition: 0.4s;
-            z-index: 10;
-        }
+        /* Footer profesional */
+        footer { padding: 60px 10% 20px; background: #000; border-top: 2px solid var(--neon); }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+        .footer-col h4 { color: var(--neon); margin-bottom: 20px; font-size: 1rem; }
+        .footer-col p, .footer-col a { color: #888; font-size: 0.85rem; text-decoration: none; display: block; margin: 10px 0; }
+        .footer-col a:hover { color: var(--neon); }
 
-        .category-card:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 25px #00bfff;
-        }
-
-        .category-card img { width: 100%; height: 150px; object-fit: contain; margin-bottom: 15px; }
-        .category-card h2 { font-size: 1.1rem; color: #00bfff; margin-bottom: 15px; }
-
-        .btn {
-            display: inline-block;
-            padding: 8px 20px;
-            border: 1px solid #00bfff;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.8rem;
-        }
-
-        /* SCROLL INFO */
-        .info-section {
-            background: #0d161f;
-            padding: 80px 10%;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            text-align: center;
-        }
-
-        footer {
-            background: #050a0f;
-            padding: 40px;
-            text-align: center;
-            border-top: 1px solid #00bfff;
-        }
-
-        .admin-link { color: #222; text-decoration: none; font-size: 0.8rem; display: block; margin-top: 20px; }
+        .admin-lock { color: #111; text-decoration: none; display: block; margin-top: 50px; text-align: center; font-size: 0.7rem; }
     </style>
 </head>
 <body>
 
-    <section class="hero">
+    <nav><div class="logo-text">CLD-PC.TECH</div></nav>
+
+    <header class="hero">
+        <h1 style="font-size: 3rem; margin: 0; text-shadow: 0 0 20px var(--neon);">CLD-PC.TECH</h1>
+        <p style="color: var(--neon); font-size: 1.2rem; letter-spacing: 3px; margin-top: 15px;">PREMIUM CUSTOM PC ENGINEERING</p>
+    </header>
+
+    <h2 class="section-title">UNSERE KATEGORIEN</h2>
+    <div class="grid-main">
         <div class="category-card">
             <img src="gaming.jpg" alt="Gaming">
-            <h2>GAMING BUILDS</h2>
-            <a href="gaming.html" class="btn">ÖFFNEN</a>
+            <h3>GAMING BUILDS</h3>
+            <a href="gaming.html" style="margin-bottom: 25px;" class="btn-send">ÖFFNEN</a>
         </div>
-
-        <div class="spacer-center"></div>
-
         <div class="category-card">
             <img src="office.jpg" alt="Office">
-            <h2>OFFICE & WORK</h2>
-            <a href="office.html" class="btn">ÖFFNEN</a>
+            <h3>OFFICE & WORK</h3>
+            <a href="office.html" style="margin-bottom: 25px;" class="btn-send">DETAILS</a>
         </div>
-    </section>
+    </div>
 
-    <section class="info-section">
-        <div>
-            <h3 style="color:#00bfff">Zahlung</h3>
-            <p>Banküberweisung & Revolut</p>
-        </div>
-        <div>
-            <h3 style="color:#00bfff">Garantie</h3>
-            <p>24 Monate Premium Support</p>
-        </div>
-        <div>
-            <h3 style="color:#00bfff">Standort</h3>
-            <p>Deutschland</p>
+    <section class="contact-section">
+        <h2 class="section-title">Haben Sie Fragen?</h2>
+        <div class="contact-container">
+            <form action="https://formspree.io/f/cld-pctech@web.de" method="POST" class="contact-form">
+                <input type="text" name="name" placeholder="Ihr Name" required>
+                <input type="email" name="_replyto" placeholder="Ihre E-Mail" required>
+                <textarea name="message" rows="5" placeholder="Ihre Nachricht / Impressio" required></textarea>
+                <button type="submit" class="btn-send">NACHRICHT SENDEN</button>
+            </form>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 CLD-PC.TECH | Deutschland</p>
-        <a href="admin.html" class="admin-link">🔒 Adminbereich</a>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>KONTAKT</h4>
+                <p>📍 Viernheim, Deutschland</p>
+                <p>📧 Email: cld-pctech@web.de</p>
+                <p>📞 Tel: [Hier Telefonnummer]</p>
+            </div>
+            <div class="footer-col">
+                <h4>ZAHLUNGSMETHODEN</h4>
+                <p>💳 Banküberweisung (Vorkasse)</p>
+                <p>📱 Revolut / PayPal</p>
+                <p>💵 Barzahlung bei Abholung</p>
+            </div>
+            <div class="footer-col">
+                <h4>RECHTLICHES</h4>
+                <a href="#">Impressum</a>
+                <a href="#">Datenschutzerklärung</a>
+                <a href="#">Widerrufsrecht</a>
+                <a href="#">AGB</a>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px; color: #444; font-size: 0.8rem;">
+            &copy; 2025 CLD-PC.TECH | Engineered in Germany
+        </div>
+        
+        <a href="admin.html" class="admin-lock">🔒 Admin Login</a>
     </footer>
 
 </body>
