@@ -1,219 +1,168 @@
 
-     
 <!DOCTYPE html>
-<html lang="ro">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CLD-PC.TECH | Professional Custom Builds</title>
+    <title>CLD-PC.TECH | Custom Designs</title>
     <style>
-        /* RESET ȘI BAZĂ */
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
-            background-color: #050a0f;
+            background: #0a1118;
             color: white;
-            overflow-x: hidden;
             scroll-behavior: smooth;
         }
 
-        /* PAGINA 1: HERO (FUNDALUL TĂU ORIGINAL) */
+        /* FUNDALUL TAU ORIGINAL */
         .hero {
             height: 100vh;
             background: url('hero.jpg') no-repeat center center fixed;
             background-size: cover;
             display: flex;
-            flex-direction: column;
             align-items: center;
-            justify-content: space-between;
-            padding: 50px 0;
+            justify-content: center;
             position: relative;
         }
 
-        .logo-top {
-            font-size: 2.2rem;
-            font-weight: 900;
-            letter-spacing: 6px;
-            color: #fff;
-            text-shadow: 0 0 20px rgba(0, 191, 255, 0.8);
-            text-transform: uppercase;
-        }
-
-        /* CATEGORIILE CARE SE MIȘCĂ (HOVER) */
-        .categories-wrapper {
+        /* CONTAINERUL CENTRAL - LOGO PE MIJLOC, BUTOANE LATERAL */
+        .main-nav-container {
             display: flex;
-            gap: 60px;
+            align-items: center;
             justify-content: center;
+            gap: 40px;
             width: 100%;
-            padding-bottom: 60px;
+            max-width: 1200px;
+            padding: 20px;
         }
 
-        .category-card {
-            background: rgba(0, 0, 0, 0.6);
-            border: 1px solid rgba(0, 191, 255, 0.4);
-            border-radius: 20px;
-            width: 320px;
-            padding: 25px;
+        /* LOGO-UL ALB ROTUND DIN FOTO */
+        .logo-central {
+            background: white;
+            color: #1a1a1a;
+            width: 300px;
+            height: 180px;
+            border-radius: 90px; /* Forma rotunjita din poza ta */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            z-index: 2;
             text-align: center;
-            backdrop-filter: blur(12px);
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            cursor: pointer;
         }
 
-        /* EFECTUL DE MIȘCARE PE CARE L-AI CERUT */
-        .category-card:hover {
-            transform: translateY(-20px) scale(1.05);
-            border-color: #00bfff;
-            box-shadow: 0 15px 40px rgba(0, 191, 255, 0.4);
-        }
+        .logo-central h1 { font-size: 4rem; font-weight: 800; line-height: 1; }
+        .logo-central p { font-size: 0.9rem; font-weight: bold; color: #333; }
 
-        .category-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: contain;
-            margin-bottom: 20px;
-        }
-
-        .category-card h2 {
-            font-size: 1.4rem;
-            color: #00bfff;
-            margin-bottom: 15px;
-        }
-
-        .btn-view {
-            display: inline-block;
-            padding: 10px 30px;
+        /* BUTOANELE STÂNGA / DREAPTA */
+        .category-card {
+            background: rgba(0, 0, 0, 0.7);
             border: 2px solid #00bfff;
+            border-radius: 15px;
+            width: 250px;
+            padding: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: 0.4s;
+        }
+
+        .category-card:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px #00bfff;
+        }
+
+        .category-card img { width: 100%; height: 140px; object-fit: contain; margin-bottom: 10px; }
+        .category-card h2 { font-size: 1rem; color: #00bfff; margin-bottom: 10px; }
+
+        .btn-small {
+            display: inline-block;
+            padding: 8px 15px;
+            border: 1px solid #00bfff;
             color: white;
             text-decoration: none;
-            border-radius: 50px;
+            font-size: 0.8rem;
             font-weight: bold;
-            transition: 0.3s;
         }
 
-        .btn-view:hover {
-            background: #00bfff;
-            color: #000;
-        }
-
-        /* SĂGEATA DE SCROLL JOS */
-        .indicator {
+        /* INDICATOR SCROLL */
+        .scroll-hint {
             position: absolute;
-            bottom: 20px;
-            font-size: 0.9rem;
+            bottom: 30px;
             color: #00bfff;
+            font-weight: bold;
             animation: bounce 2s infinite;
         }
 
-        @keyframes bounce { 0%, 100% { bottom: 20px; } 50% { bottom: 35px; } }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
-        /* PAGINA 2: SECȚIUNEA PROFESIONALĂ (INFO) */
-        .info-section {
-            padding: 100px 5vw;
-            background: linear-gradient(180deg, rgba(5,10,15,0) 0%, rgba(5,10,15,1) 100%);
+        /* SECTIUNILE DE JOS (SCROLL) */
+        .info-page {
+            background: #0d161f;
+            padding: 80px 10%;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 50px;
-        }
-
-        .info-box {
-            background: rgba(255, 255, 255, 0.03);
-            padding: 40px;
-            border-radius: 15px;
-            border-left: 4px solid #00bfff;
-        }
-
-        .info-box h3 { color: #00bfff; margin-bottom: 15px; text-transform: uppercase; }
-
-        /* PAGINA 3: CONTACT & FOOTER PROFESIONIST */
-        footer {
-            background: #000;
-            padding: 80px 5vw 40px;
-            border-top: 1px solid #1a2a3a;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
-            margin-bottom: 60px;
         }
 
-        .footer-col h4 { color: #00bfff; margin-bottom: 20px; }
-        .footer-col p, .footer-col li { color: #888; list-style: none; margin-bottom: 10px; font-size: 0.9rem; }
-
-        .admin-btn {
-            text-decoration: none;
-            color: #222;
-            font-size: 0.8rem;
-            transition: 0.3s;
+        .info-box h3 { color: #00bfff; margin-bottom: 15px; }
+        
+        footer {
+            background: #050a0f;
+            padding: 40px 10%;
+            border-top: 1px solid #00bfff;
+            text-align: center;
         }
-        .admin-btn:hover { color: #00bfff; }
+
+        .admin-link { color: #222; text-decoration: none; font-size: 0.8rem; margin-top: 20px; display: block; }
     </style>
 </head>
 <body>
 
     <section class="hero">
-        <div class="logo-top">CLD-PC.TECH</div>
-        
-        <div class="categories-wrapper">
-            <div class="category-card" onclick="location.href='/gaming'">
-                <img src="gaming.jpg" alt="Gaming PC">
-                <h2>GAMING SHOW BUILDS</h2>
-                <a href="/gaming" class="btn-view">DESCHIDE</a>
+        <div class="main-nav-container">
+            
+            <div class="category-card">
+                <img src="gaming.jpg" alt="Gaming">
+                <h2>GAMING BUILDS</h2>
+                <a href="/gaming" class="btn-small">ÖFFNEN</a>
             </div>
 
-            <div class="category-card" onclick="location.href='/office'">
-                <img src="office.jpg" alt="Office PC">
-                <h2>OFFICE & WORKSTATION</h2>
-                <a href="/office" class="btn-view">DESCHIDE</a>
+            <div class="logo-central">
+                <h1>CLD</h1>
+                <p>Custom-Led Designs PC's</p>
             </div>
+
+            <div class="category-card">
+                <img src="office.jpg" alt="Office">
+                <h2>OFFICE & WORK</h2>
+                <a href="/office" class="btn-small">ÖFFNEN</a>
+            </div>
+
         </div>
-
-        <div class="indicator">SCROLL PENTRU DETALII ↓</div>
+        <div class="scroll-hint">DETAILS ANZEIGEN ↓</div>
     </section>
 
-    <section class="info-section">
+    <section class="info-page">
         <div class="info-box">
-            <h3>Metode de Plată</h3>
-            <p>Oferim flexibilitate totală: Transfer Bancar, Revolut sau plată Cash la sediu. Toate produsele vin cu factură fiscală și garanție.</p>
+            <h3>Zahlungsarten</h3>
+            <p>Überweisung, Revolut oder Barzahlung. Alle Preise inkl. Rechnung.</p>
         </div>
         <div class="info-box">
-            <h3>Garanție 24 Luni</h3>
-            <p>Fiecare build este testat 24 de ore înainte de livrare. Primești garanție premium pentru fiecare componentă în parte.</p>
+            <h3>Support & Garantie</h3>
+            <p>24 Monate Garantie auf alle Systeme. Support aus Deutschland.</p>
         </div>
         <div class="info-box">
-            <h3>Livrare Securizată</h3>
-            <p>Ambalare profesională în dublu strat de protecție pentru ca PC-ul tău să ajungă intact, oriunde în țară.</p>
+            <h3>Standort</h3>
+            <p>Professionelle PC-Systeme direkt aus Deutschland.</p>
         </div>
     </section>
 
     <footer>
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h4>DESPRE NOI</h4>
-                <p>Specialiști în asamblări PC personalizate, optimizări de sistem și soluții workstation de înaltă performanță.</p>
-            </div>
-            <div class="footer-col">
-                <h4>CONTACT</h4>
-                <p>📧 Email: contact@cld-pc.tech</p>
-                <p>📞 Telefon: [Adaugă Numărul Tău]</p>
-                <p>📍 România</p>
-            </div>
-            <div class="footer-col">
-                <h4>INFORMAȚII</h4>
-                <ul>
-                    <li>Politica de Retur</li>
-                    <li>Termeni și Condiții</li>
-                    <li>Întrebări Frecvente</li>
-                </ul>
-            </div>
-        </div>
-
-        <div style="text-align: center; border-top: 1px solid #111; padding-top: 30px;">
-            <p style="color: #444; font-size: 0.8rem;">&copy; 2025 CLD-PC.TECH | Designed for Performance</p>
-            <a href="/admin" class="admin-btn">🔒 Panel Administrare</a>
-        </div>
+        <p>&copy; 2025 CLD-PC.TECH | Deutschland</p>
+        <p>Email: contact@cld-pc.tech</p>
+        <a href="/admin/index.html" class="admin-link">🔒 Adminbereich</a>
     </footer>
 
 </body>
