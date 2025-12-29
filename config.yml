@@ -1,9 +1,8 @@
 backend:
   name: github
-  repo: NUMELE_TAU_GITHUB/NUME_PROIECT # GOPODC/cld-seit
+  repo: GOPODC/cld-seit
   branch: main
 
-# Am setat rădăcina ca folder pentru media, deoarece pozele tale sunt afară
 media_folder: "/"
 public_folder: "/"
 
