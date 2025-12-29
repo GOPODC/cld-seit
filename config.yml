@@ -1,12 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Admin Panel</title>
-  <link href="config.yml" type="text/yaml" rel="cms-config-url">
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-</head>
-<body>
-</body>
-</html>
+backend:
+  name: github
+  repo: GOPODC/cld-seit
+  branch: main
+  base_url: https://github-proxy-api.vercel.app
+
+media_folder: "/"
+public_folder: "/"
+
+collections:
+  - name: "pages"
+    label: "Pagini"
+    files:
+      - file: "index.html"
+        label: "Pagina Principală"
+        name: "index"
+        fields:
+          - {label: "Titlu Site", name: "title", widget: "string"}
+          - {label: "Descriere", name: "description", widget: "text"}
