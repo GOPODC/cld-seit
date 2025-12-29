@@ -3,9 +3,6 @@ backend:
   repo: utilizatorul-tau/nume-proiect  # AICI trebuie să fie numele TĂU real de pe GitHub
   branch: main
 
-media_folder: "/"
-public_folder: "/"
-
 collections:
   - name: "pages"
     label: "Pagini"
@@ -16,4 +13,5 @@ collections:
         fields:
           - {label: "Titlu Site", name: "title", widget: "string"}
           - {label: "Descriere", name: "description", widget: "text"}
+
 
