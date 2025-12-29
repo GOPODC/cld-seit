@@ -1,18 +1,18 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: UTILIZATORUL_TAU/NUME_PROIECT # AICI TREBUIE SĂ SCRII NUMELE TĂU DE GITHUB ȘI AL PROIECTULUI
   branch: main
 
-media_folder: "images"
-public_folder: "images"
+media_folder: "/"
+public_folder: "/"
 
 collections:
-  - name: "content"
-    label: "Site Content"
+  - name: "pages"
+    label: "Pagini"
     files:
       - file: "index.html"
-        label: "Home Page"
-        name: "home"
+        label: "Pagina Principală"
+        name: "index"
         fields:
-          - {label: "Site Title", name: "title", widget: "string"}
-          - {label: "Contact Email", name: "email", widget: "string"}
-          - {label: "Location", name: "location", widget: "string"}
+          - {label: "Titlu Site", name: "title", widget: "string"}
+          - {label: "Descriere", name: "description", widget: "text"}
