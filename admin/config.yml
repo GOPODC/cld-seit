@@ -2,9 +2,9 @@ backend:
   name: github
   repo: GOPODC/cld-seit
   branch: main
-  base_url: https://api.netlify.com
-  auth_endpoint: /auth
-  app_id: Ov23lippJOC5RpTnDr3f
+  # Folosim un alt "paznic" (proxy) care este liber și nu te-a blocat
+  base_url: https://paznic-cms.vercel.app 
+  auth_endpoint: /api/auth
 
 media_folder: "images"
 public_folder: "/images"
