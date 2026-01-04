@@ -2,18 +2,20 @@ backend:
   name: github
   repo: GOPODC/cld-seit
   branch: main
-  base_url: https://github-proxy-api.vercel.app
+  base_url: https://api.netlify.com
+  auth_endpoint: /auth
+  app_id: AICI_PUI_CODUL_TAU_CLIENT_ID
 
-media_folder: "/"
-public_folder: "/"
+media_folder: "images"
+public_folder: "/images"
 
 collections:
-  - name: "pages"
-    label: "Pagini"
-    files:
-      - file: "index.html"
-        label: "Pagina Principală"
-        name: "index"
-        fields:
-          - {label: "Titlu Site", name: "title", widget: "string"}
-          - {label: "Descriere", name: "description", widget: "text"}
+  - name: "gaming"
+    label: "Gaming PCs"
+    folder: "_posts/gaming"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Price", name: "price", widget: "string"}
+      - {label: "Description", name: "body", widget: "markdown"}
+      - {label: "Image", name: "image", widget: "image"}
