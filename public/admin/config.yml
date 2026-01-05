@@ -2,7 +2,8 @@ backend:
   name: github
   repo: GopoDC/cld-seit
   branch: main
-  base_url: https://pww-decaps-proxy.vercel.app  # Acest serviciu va face legătura
+  site_domain: cld-seit.vercel.app
+  base_url: https://pww-decaps-proxy.vercel.app
   auth_endpoint: api/v1/authorize
 
 media_folder: "public/images"
@@ -12,6 +13,8 @@ collections:
   - name: "pagini"
     label: "Pagini Site"
     folder: "public"
+    extension: "html"
+    format: "frontmatter"
     create: true
     fields:
       - {label: "Titlu", name: "title", widget: "string"}
