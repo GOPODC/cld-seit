@@ -1,22 +1,19 @@
 backend:
   name: github
-  repo: GOPODC/cld-seit
+  repo: GopoDC/cld-seit  # VERIFICĂ DACĂ ACESTA E NUMELE TĂU DE UTILIZATOR ȘI REPO
   branch: main
-  base_url: https://api.netlify.com
-  auth_endpoint: /auth
-  app_id: Ov23lippJOC5RpTnDr3f
+  base_url: https://cld-seit.vercel.app
+  auth_endpoint: api/auth
 
-media_folder: "images"
+media_folder: "public/images"
 public_folder: "/images"
 
 collections:
-  - name: "gaming"
-    label: "Gaming PCs"
-    folder: "_posts/gaming"
+  - name: "pagini"
+    label: "Pagini Site"
+    folder: "public"
     create: true
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Price", name: "price", widget: "string"}
-      - {label: "Description", name: "body", widget: "markdown"}
-      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Titlu", name: "title", widget: "string"}
+      - {label: "Corp Pagina", name: "body", widget: "markdown"}
 
