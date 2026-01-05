@@ -4,7 +4,7 @@ backend:
   branch: main
   base_url: https://api.netlify.com
   auth_endpoint: /auth
-  app_id: CODUL_TAU_CLIENT_ID
+  app_id: Ov23lippJOC5RpTnDr3f
 
 media_folder: "images"
 public_folder: "/images"
@@ -19,3 +19,4 @@ collections:
       - {label: "Price", name: "price", widget: "string"}
       - {label: "Description", name: "body", widget: "markdown"}
       - {label: "Image", name: "image", widget: "image"}
+
