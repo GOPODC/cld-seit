@@ -2,8 +2,7 @@ backend:
   name: github
   repo: GopoDC/cld-seit
   branch: main
-  site_domain: cld-seit.vercel.app
-  base_url: https://pww-decaps-proxy.vercel.app
+  base_url: https://pwa-auth-proxy.vercel.app
   auth_endpoint: api/v1/authorize
 
 media_folder: "public/images"
@@ -11,11 +10,11 @@ public_folder: "/images"
 
 collections:
   - name: "pagini"
-    label: "Pagini Site"
+    label: "Pagini"
     folder: "public"
     extension: "html"
     format: "frontmatter"
     create: true
     fields:
       - {label: "Titlu", name: "title", widget: "string"}
-      - {label: "Corp Pagina", name: "body", widget: "markdown"}
+      - {label: "Corp", name: "body", widget: "markdown"}
